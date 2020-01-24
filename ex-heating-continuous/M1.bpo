@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.poIdentifier name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.poIdentifier name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poPredicate name="xp_prophecz" org.eventb.core.predicate="P∈D → BOOL" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_5yLLAxp-EeqHBPFRkaVZGw"/>
+<org.eventb.core.poPredicate name="xp_prophec{" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_Oa3tUhp_EeqHBPFRkaVZGw"/>
+<org.eventb.core.poIdentifier name="Tmax" org.eventb.core.type="R"/>
+<org.eventb.core.poIdentifier name="Tmin" org.eventb.core.type="R"/>
+<org.eventb.core.poPredicate name="xp_prophec|" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_Ic58QhqOEeqTbqgIAHD0aQ"/>
+<org.eventb.core.poPredicate name="xp_prophec}" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_Ic58QxqOEeqTbqgIAHD0aQ"/>
+<org.eventb.core.poPredicate name="xp_prophec~" org.eventb.core.predicate="lt(Tmin,Tmax)" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_Ic58RBqOEeqTbqgIAHD0aQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/ex-heating-continuous/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="x_p" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.poPredicate name="x_q" org.eventb.core.predicate="x_p∈(Rplus ⦂ ℙ(R)) → D" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_flHBMxp-EeqHBPFRkaVZGw"/>
+<org.eventb.core.poPredicate name="x_r" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p(t))=TRUE" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_flHBNBp-EeqHBPFRkaVZGw"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/act1/SIM" org.eventb.core.accurate="false" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-continuous/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPx_q">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE)" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'|org.eventb.core.action#_flHBMRp-EeqHBPFRkaVZGw"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.event#'|org.eventb.core.action#_flHBMRp-EeqHBPFRkaVZGw"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-continuous/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-continuous/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/ex-heating-continuous/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#INITIALISATION\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTx_q" org.eventb.core.parentSet="/ex-heating-continuous/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="x_p'" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPx_q" org.eventb.core.parentSet="/ex-heating-continuous/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTx_q" org.eventb.core.poStamp="1"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ex-heating-continuous/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#_Ra6ZEBqOEeqTbqgIAHD0aQ"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#_1KuXsBHLEeq_b9yCMMHRxA"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

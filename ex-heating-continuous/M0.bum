@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="abstract problem" org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1575900976181" org.eventb.texttools.text_representation="machine M0 // abstract problem&#10; sees C0&#10;&#10;variables x_p // abstract continuous var&#10;&#10;&#10;invariants&#10;  @type_xp x_p∈Rplus→D&#10;  @safety ∀ t · t∈Rplus ⇒ P(x_p(t))=TRUE&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 x_p :∣  x_p' ∈ Rplus→D ∧ (∀ t · t∈Rplus ⇒ P(x_p'(t))=TRUE )&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="_flHBMBp-EeqHBPFRkaVZGw" org.eventb.core.target="C0"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_flHBMRp-EeqHBPFRkaVZGw" org.eventb.core.assignment="x_p :∣  x_p' ∈ Rplus→D ∧ (∀ t · t∈Rplus ⇒ P(x_p'(t))=TRUE )" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="_flHBMxp-EeqHBPFRkaVZGw" org.eventb.core.generated="false" org.eventb.core.label="type_xp" org.eventb.core.predicate="x_p∈Rplus→D"/>
+<org.eventb.core.invariant name="_flHBNBp-EeqHBPFRkaVZGw" org.eventb.core.generated="false" org.eventb.core.label="safety" org.eventb.core.predicate="∀ t · t∈Rplus ⇒ P(x_p(t))=TRUE"/>
+<org.eventb.core.variable name="_dmDgQBqOEeqTbqgIAHD0aQ" org.eventb.core.comment="abstract continuous var" org.eventb.core.generated="false" org.eventb.core.identifier="x_p"/>
+</org.eventb.core.machineFile>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/theory-axiom-reals">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/theory-axiom-reals/Real.dtf|org.eventb.theory.core.deployedTheoryRoot#Real"/>
+<org.eventb.theory.core.importTheory name="(" org.eventb.theory.core.importTheory="/theory-axiom-reals/RealAdditions.dtf|org.eventb.theory.core.deployedTheoryRoot#RealAdditions"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.typeParameter name=")" org.eventb.core.comment="Domain specfic type, e.g. type of temperature, speed" org.eventb.core.identifier="F"/>
+<org.eventb.theory.core.datatypeDefinition name="*" org.eventb.core.identifier="DE">
+<org.eventb.theory.core.datatypeConstructor name="'" org.eventb.core.comment="initial value problem" org.eventb.core.identifier="ivp">
+<org.eventb.theory.core.constructorArgument name="'" org.eventb.core.comment=" the ordinary differential equation " org.eventb.core.identifier="fun_ivp" org.eventb.theory.core.type="ℙ(R×F×F)"/>
+<org.eventb.theory.core.constructorArgument name="(" org.eventb.core.comment="  fun(t0) = c0" org.eventb.core.identifier="initial" org.eventb.theory.core.type="F"/>
+<org.eventb.theory.core.constructorArgument name=")" org.eventb.core.comment=" t0" org.eventb.core.identifier="initialArg" org.eventb.theory.core.type="R"/>
+</org.eventb.theory.core.datatypeConstructor>
+<org.eventb.theory.core.typeArgument name="(" org.eventb.theory.core.givenType="F"/>
+<org.eventb.theory.core.datatypeConstructor name=")" org.eventb.core.comment="ordinary differential equation" org.eventb.core.identifier="ode">
+<org.eventb.theory.core.constructorArgument name="'" org.eventb.core.identifier="fun_ode" org.eventb.theory.core.type="ℙ(R×F×F)"/>
+</org.eventb.theory.core.datatypeConstructor>
+</org.eventb.theory.core.datatypeDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="solutionOf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.comment="in Domain D that function f is solution of DE eq" org.eventb.core.expression="ℙ(Rplus)" org.eventb.core.identifier="D"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.comment="DE" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.comment="solution of DE" org.eventb.core.expression="Rplus → F" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="⊤ ∨ ⊥ "/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="1" org.eventb.core.label="approximationOf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.comment="Domain" org.eventb.core.expression="ℙ(Rplus)" org.eventb.core.identifier="D"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.comment="DE" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.comment="approximated solution" org.eventb.core.expression="Rplus → F" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.comment="error" org.eventb.core.expression="F" org.eventb.core.identifier="e"/>
+<org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="⊤ ∨ ⊥ "/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.label="Solvable" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(R)" org.eventb.core.identifier="D"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∃ x · x ∈ (D → F) ∧ solutionOf(D,eq,x)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="0" org.eventb.core.label="AppendSolutionBAP" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(R)" org.eventb.core.identifier="D"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(D)" org.eventb.core.identifier="A"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="ℙ(D)" org.eventb.core.identifier="B"/>
+<org.eventb.theory.core.operatorArgument name="+" org.eventb.core.expression="D → F" org.eventb.core.identifier="eta"/>
+<org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="A ∩ B = ∅"/>
+<org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.predicate="Solvable(B,eq)"/>
+<org.eventb.theory.core.directOperatorDefinition name="." org.eventb.theory.core.formula="etap ∈ D → F ∧&#10;(A ◁ etap = A ◁ eta) ∧&#10;solutionOf(B, eq, B ◁ etap)"/>
+<org.eventb.theory.core.operatorArgument name="/" org.eventb.core.expression="D → F" org.eventb.core.identifier="etap"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="2" org.eventb.core.label="getDynamics" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.recursiveOperatorDefinition name="'" org.eventb.theory.core.inductiveArgument="de">
+<org.eventb.theory.core.recursiveDefinitionCase name="'" org.eventb.core.expression="ivp(f,t0,v0)" org.eventb.theory.core.formula="f"/>
+<org.eventb.theory.core.recursiveDefinitionCase name="(" org.eventb.core.expression="ode(f1)" org.eventb.theory.core.formula="f1"/>
+</org.eventb.theory.core.recursiveOperatorDefinition>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="de"/>
+</org.eventb.theory.core.newOperatorDefinition>
+</org.eventb.theory.core.theoryRoot>

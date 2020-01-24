@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scRefinesMachine name="'" org.eventb.core.scTarget="/ex-heating-continuous/M1.bcm" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.refinesMachine#_vU0FMBqHEeqm8efmISDIzA"/>
+<org.eventb.core.scSeesContext name="(" org.eventb.core.scTarget="/ex-heating-continuous/C2.bcc" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.seesContext#_vU0FMRqHEeqm8efmISDIzA"/>
+<org.eventb.core.scInternalContext name="C0">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="type_P" org.eventb.core.predicate="P∈D → BOOL" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_5yLLAxp-EeqHBPFRkaVZGw" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="prophecy_x" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_Oa3tUhp_EeqHBPFRkaVZGw" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="D" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#_5yLLABp-EeqHBPFRkaVZGw" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.scConstant name="P" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#_j5hCYBqOEeqTbqgIAHD0aQ" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.scConstant name="xp_prophecy" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#_j5hCYRqOEeqTbqgIAHD0aQ" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInternalContext name="C1">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/ex-heating-continuous/C0.bcc|org.eventb.core.scContextFile#C0" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.extendsContext#_FCn1cBqIEeqm8efmISDIzA"/>
+<org.eventb.core.scAxiom name="C1" org.eventb.core.label="type_Tmax" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_Ic58QhqOEeqTbqgIAHD0aQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="C2" org.eventb.core.label="type_Tmin" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_Ic58QxqOEeqTbqgIAHD0aQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="C3" org.eventb.core.label="Tmin_lt_Tmax" org.eventb.core.predicate="lt(Tmin,Tmax)" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#_Ic58RBqOEeqTbqgIAHD0aQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant name="Tmax" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.constant#_Ic58QBqOEeqTbqgIAHD0aQ" org.eventb.core.type="R"/>
+<org.eventb.core.scConstant name="Tmin" org.eventb.core.source="/ex-heating-continuous/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.constant#_Ic58QRqOEeqTbqgIAHD0aQ" org.eventb.core.type="R"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInternalContext name="C2">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/ex-heating-continuous/C1.bcc|org.eventb.core.scContextFile#C1" org.eventb.core.source="/ex-heating-continuous/C2.buc|org.eventb.core.contextFile#C2|org.eventb.core.extendsContext#_ieckEOQ_Eemewr29nNfyvQ"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInvariant name="C1" org.eventb.core.label="type_xp" org.eventb.core.predicate="x_p∈(Rplus ⦂ ℙ(R)) → D" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_flHBMxp-EeqHBPFRkaVZGw" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="C2" org.eventb.core.label="safety" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p(t))=TRUE" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.invariant#_flHBNBp-EeqHBPFRkaVZGw" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="C3" org.eventb.core.label="type_Ta" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#_Ra6ZEBqOEeqTbqgIAHD0aQ" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="C4" org.eventb.core.label="safety" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#_1KuXsBHLEeq_b9yCMMHRxA" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="C5" org.eventb.core.label="type_T" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#_vU0FNxqHEeqm8efmISDIzA" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="C6" org.eventb.core.label="type_now" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#_vU0FOBqHEeqm8efmISDIzA" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="C7" org.eventb.core.label="safety" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#_vU0FORqHEeqm8efmISDIzA" org.eventb.core.theorem="false"/>
+<org.eventb.core.scVariable name="x_p" org.eventb.core.abstract="false" org.eventb.core.concrete="false" org.eventb.core.source="/ex-heating-continuous/M0.bum|org.eventb.core.machineFile#M0|org.eventb.core.variable#_dmDgQBqOEeqTbqgIAHD0aQ" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.scEvent name="x_q" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'">
+<org.eventb.core.scRefinesEvent name="'" org.eventb.core.scTarget="/ex-heating-continuous/M1.bcm|org.eventb.core.scMachineFile#M1|org.eventb.core.scEvent#x_q" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="x_r" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Prophecy" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA"/>
+</org.eventb.core.scMachineFile>

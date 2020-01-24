@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="Craft a theory for a specfic heating system" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.importTheoryProject name="," org.eventb.theory.core.importTheoryProject="/theory-axiom-reals">
+<org.eventb.theory.core.importTheory name="(" org.eventb.theory.core.importTheory="/theory-axiom-reals/Real.dtf|org.eventb.theory.core.deployedTheoryRoot#Real"/>
+<org.eventb.theory.core.importTheory name=")" org.eventb.theory.core.importTheory="/theory-axiom-reals/DiffEq.dtf|org.eventb.theory.core.deployedTheoryRoot#DiffEq"/>
+<org.eventb.theory.core.importTheory name="*" org.eventb.theory.core.importTheory="/theory-axiom-reals/Intervals.dtf|org.eventb.theory.core.deployedTheoryRoot#Intervals"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="-" org.eventb.core.label="Temp">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="0" org.eventb.core.comment="actuation time taken to switch mode" org.eventb.core.label="tact" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="1" org.eventb.core.label="prop_tact" org.eventb.core.predicate="tact ∈ Rplus"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name=":" org.eventb.core.comment="Ton is monotonically increasing" org.eventb.core.label="solution_Ton_dot_mono_inc" org.eventb.core.predicate="∀ t0, v0 · &#13;&#10; t0∈Rplus∧v0∈R ∧ solutionOf(lclosed(t0), Ton_dot(t0,v0), Ton(t0,v0)) ⇒&#13;&#10;  (∀ t1 , t2 · &#13;&#10;   t1∈Rplus ∧ t2∈Rplus ∧ leq(t1, t2) ⇒&#13;&#10;    leq(Ton(t0,v0)(t1), Ton(t0,v0)(t2)))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="F" org.eventb.core.comment="Toff is monotonically decreasing" org.eventb.core.label="solution_Toff_dot_mono_dec" org.eventb.core.predicate="∀ t0, v0 · &#13;&#10; t0∈Rplus∧v0∈R ∧ solutionOf(lclosed(t0), Toff_dot(t0,v0), Toff(t0,v0)) ⇒&#13;&#10;  (∀ t1 , t2 · &#13;&#10;   t1∈Rplus ∧ t2∈Rplus ∧ leq(t1, t2) ⇒&#13;&#10;    leq(Toff(t0,v0)(t2), Toff(t0,v0)(t1)))"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.theorem name="." org.eventb.core.label="prop_tact" org.eventb.core.predicate="leq(zero,tact)"/>
+<org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.label="Ton_dot" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.theory.core.formula="ivp((λ (now ↦ vnow)·now↦vnow ∈ Rplus×R ∣ one), t0, v0)"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="Rplus" org.eventb.core.identifier="t0"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="R" org.eventb.core.identifier="v0"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="0" org.eventb.core.label="Ton" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="Rplus" org.eventb.core.identifier="t0"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="R" org.eventb.core.identifier="v0"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(λ t · t∈Rplus ∣ neg(t0 sub t) plus v0)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element1" org.eventb.core.label="Toff_dot" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.theory.core.formula="ivp((λ (now ↦ vnow)·now↦vnow ∈ Rplus×R ∣ neg(one)), t0, v0)"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="Rplus" org.eventb.core.identifier="t0"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="R" org.eventb.core.identifier="v0"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element2" org.eventb.core.label="Toff" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="Rplus" org.eventb.core.identifier="t0"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="R" org.eventb.core.identifier="v0"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(λ t · t∈Rplus ∣ (t0 sub t) plus v0)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name="element3" org.eventb.core.label="prop_Ton_initial" org.eventb.core.predicate="∀ t0, v0 · t0∈Rplus ∧ v0∈R  ⇒ Ton(t0, v0)(t0) = v0"/>
+<org.eventb.theory.core.theorem name="element4" org.eventb.core.label="prop_Toff_initial" org.eventb.core.predicate="∀ t0, v0 · t0∈Rplus ∧ v0∈R  ⇒ Toff(t0, v0)(t0) = v0"/>
+</org.eventb.theory.core.theoryRoot>

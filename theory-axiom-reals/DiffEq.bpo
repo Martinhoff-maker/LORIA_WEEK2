@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="F" org.eventb.core.type="ℙ(F)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Solvable/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/theory-axiom-reals/DiffEq.bpo|org.eventb.core.poFile#DiffEq|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀D⦂ℙ(R),eq⦂DE(F)·D∈ℙ(R ⦂ ℙ(R))∧eq∈DE(F)⇒(⊤⇒(∀x⦂ℙ(R×F)·x∈D → F⇒D∈ℙ(Rplus ⦂ ℙ(R))∧x∈(Rplus ⦂ ℙ(R)) → F))" org.eventb.core.source="/theory-axiom-reals/DiffEq.tuf|org.eventb.theory.core.theoryRoot#DiffEq|org.eventb.theory.core.newOperatorDefinition#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/theory-axiom-reals/DiffEq.tcf|org.eventb.theory.core.scTheoryRoot#DiffEq|org.eventb.theory.core.scNewOperatorDefinition#DH"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/theory-axiom-reals/DiffEq.tuf|org.eventb.theory.core.theoryRoot#DiffEq|org.eventb.theory.core.newOperatorDefinition#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/theory-axiom-reals/DiffEq.bpo|org.eventb.core.poFile#DiffEq|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/theory-axiom-reals/DiffEq.bpo|org.eventb.core.poFile#DiffEq|org.eventb.core.poSequent#Solvable\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AppendSolutionBAP/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/theory-axiom-reals/DiffEq.bpo|org.eventb.core.poFile#DiffEq|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀eq⦂DE(F),D⦂ℙ(R),A⦂ℙ(R),B⦂ℙ(R),eta⦂ℙ(R×F),etap⦂ℙ(R×F)·eq∈DE(F)∧D∈ℙ(R ⦂ ℙ(R))∧A∈ℙ(R ⦂ ℙ(R))∧B∈ℙ(R ⦂ ℙ(R))∧eta∈ℙ((R ⦂ ℙ(R)) × F)∧etap∈ℙ((R ⦂ ℙ(R)) × F)⇒(A∈ℙ(D)∧B∈ℙ(D)∧eta∈D → F∧etap∈D → F∧(A∩B=(∅ ⦂ ℙ(R))∧Solvable(B,eq))⇒(etap∈D → F∧A ◁ etap=A ◁ eta⇒B∈ℙ(Rplus ⦂ ℙ(R))∧B ◁ etap∈(Rplus ⦂ ℙ(R)) → F))" org.eventb.core.source="/theory-axiom-reals/DiffEq.tuf|org.eventb.theory.core.theoryRoot#DiffEq|org.eventb.theory.core.newOperatorDefinition#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/theory-axiom-reals/DiffEq.tcf|org.eventb.theory.core.scTheoryRoot#DiffEq|org.eventb.theory.core.scNewOperatorDefinition#DI"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/theory-axiom-reals/DiffEq.tuf|org.eventb.theory.core.theoryRoot#DiffEq|org.eventb.theory.core.newOperatorDefinition#0"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/theory-axiom-reals/DiffEq.bpo|org.eventb.core.poFile#DiffEq|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/theory-axiom-reals/DiffEq.bpo|org.eventb.core.poFile#DiffEq|org.eventb.core.poSequent#AppendSolutionBAP\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+</org.eventb.core.poFile>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="Detail control logic with continuous sensor reading&#10;   TODO: Figure out the dynamics in the onoff and offon mode&#10;   We need to avoid proofs that are based on the body of DEs&#10;    " org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1576494542928" org.eventb.texttools.text_representation="machine M4&#10;/* Detail control logic with continuous sensor reading&#10;   TODO: Figure out the dynamics in the onoff and offon mode&#10;   We need to avoid proofs that are based on the body of DEs&#10;    */&#10; refines M3  sees C4&#10;&#10;variables T // continuous var temperature&#10;          now // continuous var time&#10;          s // system state&#10;          ta // delta time to be appended&#10;          fa // curve to append&#10;          q // discrete state&#10;          t0 // initial condition: time&#10;          T0 // initial condition: temperature&#10;&#10;&#10;invariants&#10;  @type_T T∈Rplus→R&#10;  @type_now now∈Rplus&#10;  @type_s s∈sysSTATE&#10;  @type_q q∈ctrlSTATE&#10;  @id_ta ta = deltaT&#10;  @type_t0 t0∈Rplus&#10;  @type_T0 T0∈R&#10;  @id_fa_on s = RUN ∧ q=ON ⇒ (fa = Ton(t0,T0))&#10;  @id_fa_off s= RUN ∧ q=OFF ⇒ (fa = Toff(t0,T0))&#10;  @id_fa_onoff s = RUN ∧ q=ONOFF ⇒ (fa = Tonoff(now,T(now)))&#10;  @id_fa_offon s= RUN ∧ q=OFFON ⇒  (fa = Toffon(now,T(now)))&#10;  @predict_inv ∀t·t∈Rplus∧t∈closed(zero, now plus tact)⇒ T(t)∈closed(Tmin,Tmax) // stronger safety invariant, induced from safe_fa_new&#10;  @type_ta ta∈Rplus&#10;  @type_fa fa ∈ Rplus → R&#10;  @safe_fa s = RUN ⇒   (∀t·t∈Rplus∧t∈closed(now, (now plus ta) plus tact)⇒fa(t)∈closed(Tmin,Tmax)) // ensure fa is safe on a longer time frame, to cope with inertia&#10;  theorem @safety ∀t·t∈Rplus∧t∈closed(zero, now)⇒ T(t)∈closed(Tmin,Tmax)&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 T ≔  (λ t · t ∈ Rplus ∣ Tmin)&#10;      @act2 now ≔ zero&#10;      @act3 s ≔ DECISION&#10;      @act4 ta ≔ deltaT&#10;      @act5 fa :∈ Rplus → R&#10;      @act6 q ≔ ON&#10;      @act7 t0≔zero&#10;      @act8 T0≔Tmin&#10;  end&#10;&#10;  event Progression refines Progression&#10;    where&#10;      @grd1 s = RUN&#10;    then&#10;      @act1 now ≔ now plus ta&#10;      @act2 T ≔ (T   ({ t ∣ lt(now, t)} ◁ fa))&#10;      @act3 s ≔ DECISION&#10;  end&#10;&#10;  event Prediction_ON_safe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = ON&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Ton(t0,T0)&#10;      @id_fc_dot fc_dot = Ton_dot(t0,T0)&#10;      @sol_Ton_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = fc&#10;      @id_fp_dot fp_dot = fc_dot&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state leq(Ton(t0,T0)((now plus deltaT) plus tact), Tmax)&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ ON&#10;  end&#10;&#10;  event Prediction_ON_unsafe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = ON&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Ton(t0,T0)&#10;      @id_fc_dot fc_dot = Ton_dot(t0,T0)&#10;      @sol_fc_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = Tonoff(now,T(now))&#10;      @id_fp_dot fp_dot = Tonoff_dot(now,T(now))&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state gt(Ton(t0,T0)((now plus deltaT) plus tact), Tmax)&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ ONOFF&#10;      @act5 t0 ≔ now&#10;      @act6 T0 ≔  T(now)&#10;  end&#10;&#10;  event Prediction_OFFON_safe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = OFFON&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Ton(now,T(now))&#10;      @id_fc_dot fc_dot = Ton_dot(now,T(now))&#10;      @sol_Ton_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = fc&#10;      @id_fp_dot fp_dot = fc_dot&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state leq(Ton(now,T(now))((now plus deltaT) plus tact), Tmax)&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ ON&#10;      @act5 t0 ≔ now&#10;      @act6 T0 ≔  T(now)&#10;  end&#10;&#10;  event Prediction_OFFON_unsafe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = OFFON&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Ton(now,T(now))&#10;      @id_fc_dot fc_dot = Ton_dot(now,T(now))&#10;      @sol_fc_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = Tonoff(now,T(now))&#10;      @id_fp_dot fp_dot = Tonoff_dot(now,T(now))&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state gt(Ton(now,T(now))((now plus deltaT) plus tact), Tmax)&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ ONOFF&#10;      @act5 t0 ≔ now&#10;      @act6 T0 ≔  T(now)&#10;  end&#10;&#10;  event Prediction_OFF_safe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = OFF&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Toff(t0,T0)&#10;      @id_fc_dot fc_dot = Toff_dot(t0,T0)&#10;      @sol_Ton_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = fc&#10;      @id_fp_dot fp_dot = fc_dot&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state leq(Tmin, Toff(t0,T0)((now plus deltaT) plus tact))&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ OFF&#10;  end&#10;&#10;  event Prediction_OFF_unsafe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = OFF&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Toff(t0,T0)&#10;      @id_fc_dot fc_dot = Toff_dot(t0,T0)&#10;      @sol_fc_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = Toffon(now,T(now))&#10;      @id_fp_dot fp_dot = Toffon_dot(now,T(now))&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state gt(Tmin, Toff(t0,T0)((now plus deltaT) plus tact))&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ OFFON&#10;      @act5 t0 ≔ now&#10;      @act6 T0 ≔  T(now)&#10;  end&#10;&#10;  event Prediction_ONOFF_safe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = ONOFF&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Toff(now,T(now))&#10;      @id_fc_dot fc_dot = Toff_dot(now,T(now))&#10;      @sol_Ton_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = fc&#10;      @id_fp_dot fp_dot = fc_dot&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state leq(Tmin, Toff(now,T(now))((now plus deltaT) plus tact))&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ OFF&#10;      @act5 t0 ≔ now&#10;      @act6 T0 ≔  T(now)&#10;  end&#10;&#10;  event Prediction_ONOFF_unsafe refines Prediction&#10;    any fc fc_dot fp fp_dot&#10;    where&#10;      @sys_mode s = DECISION&#10;      @mode q = ONOFF&#10;      @tp_fc fc ∈ Rplus → R&#10;      @id_fc fc = Toff(now,T(now))&#10;      @id_fc_dot fc_dot = Toff_dot(now,T(now))&#10;      @sol_fc_dot solutionOf(lclosed(now), fc_dot, fc)&#10;      @tp_fp fp ∈ Rplus → R&#10;      @id_fp fp = Toffon(now,T(now))&#10;      @id_fp_dot fp_dot = Toffon_dot(now,T(now))&#10;      @sol_fp_dot solutionOf(lclosed(now), fp_dot, fp)&#10;      @exact_state gt(Tmin, Toff(now,T(now))((now plus deltaT) plus tact))&#10;    with&#10;      @tx tx = deltaT&#10;      @f f = fp&#10;      @e e = fp_dot&#10;    then&#10;      @act1 s ≔ RUN&#10;      @act2 ta ≔ deltaT&#10;      @act3 fa ≔ fp&#10;      @act4 q ≔ OFFON&#10;      @act5 t0 ≔ now&#10;      @act6 T0 ≔  T(now)&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.refinesMachine name="_v2k-cNMKEembo_88jyb-4Q" org.eventb.core.target="M3"/>
+<org.eventb.core.seesContext name="_zLSIMNQBEemDM5Iimbqbaz" org.eventb.core.target="C4"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_v2k-ctMKEembo_88jyb-4Q" org.eventb.core.assignment="T ≔  (λ t · t ∈ Rplus ∣ Tmin)" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_v2k-c9MKEembo_88jyb-4Q" org.eventb.core.assignment="now ≔ zero" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_v2k-dNMKEembo_88jyb-4Q" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_v2k-ddMKEembo_88jyb-4Q" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_v2k-dtMKEembo_88jyb-4Q" org.eventb.core.assignment="fa :∈ Rplus → R" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_v2k-d9MKEembo_88jyb-4Q" org.eventb.core.assignment="q ≔ ON" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="_v2k-dtMKEembo_88jyb-4R" org.eventb.core.assignment="t0≔zero" org.eventb.core.generated="false" org.eventb.core.label="act7"/>
+<org.eventb.core.action name="_mA7-4BXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="T0≔Tmin" org.eventb.core.generated="false" org.eventb.core.label="act8"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_v2llgtMKEembo_88jyb-4Q" org.eventb.core.comment="continuous var temperature" org.eventb.core.generated="false" org.eventb.core.identifier="T"/>
+<org.eventb.core.variable name="_v2llg9MKEembo_88jyb-4Q" org.eventb.core.comment="continuous var time" org.eventb.core.generated="false" org.eventb.core.identifier="now"/>
+<org.eventb.core.variable name="_v2llhNMKEembo_88jyb-4Q" org.eventb.core.comment="system state" org.eventb.core.generated="false" org.eventb.core.identifier="s"/>
+<org.eventb.core.variable name="_v2llhdMKEembo_88jyb-4Q" org.eventb.core.comment="delta time to be appended" org.eventb.core.generated="false" org.eventb.core.identifier="ta"/>
+<org.eventb.core.variable name="_v2llhtMKEembo_88jyb-4Q" org.eventb.core.comment="curve to append" org.eventb.core.generated="false" org.eventb.core.identifier="fa"/>
+<org.eventb.core.variable name="_v2llh9MKEembo_88jyb-4Q" org.eventb.core.comment="discrete state" org.eventb.core.generated="false" org.eventb.core.identifier="q"/>
+<org.eventb.core.invariant name="_v2llitMKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="type_T" org.eventb.core.predicate="T∈Rplus→R"/>
+<org.eventb.core.invariant name="_v2lli9MKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="type_now" org.eventb.core.predicate="now∈Rplus"/>
+<org.eventb.core.invariant name="_v2lljNMKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="type_s" org.eventb.core.predicate="s∈sysSTATE"/>
+<org.eventb.core.invariant name="_v2mMkNMKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="type_q" org.eventb.core.predicate="q∈ctrlSTATE"/>
+<org.eventb.core.invariant name="_v2mMldMKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="id_ta" org.eventb.core.predicate="ta = deltaT"/>
+<org.eventb.core.invariant name="_mA7-4xXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="type_t0" org.eventb.core.predicate="t0∈Rplus"/>
+<org.eventb.core.invariant name="_mA7-5BXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="type_T0" org.eventb.core.predicate="T0∈R"/>
+<org.eventb.core.invariant name="_mA7-5RXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="id_fa_on" org.eventb.core.predicate="s = RUN ∧ q=ON ⇒ (fa = Ton(t0,T0))"/>
+<org.eventb.core.invariant name="_mA7-5hXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="id_fa_off" org.eventb.core.predicate="s= RUN ∧ q=OFF ⇒ (fa = Toff(t0,T0))"/>
+<org.eventb.core.invariant name="_mA7-5xXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="id_fa_onoff" org.eventb.core.predicate="s = RUN ∧ q=ONOFF ⇒ (fa = Tonoff(now,T(now)))"/>
+<org.eventb.core.invariant name="_mA7-6BXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="id_fa_offon" org.eventb.core.predicate="s= RUN ∧ q=OFFON ⇒  (fa = Toffon(now,T(now)))"/>
+<org.eventb.core.invariant name="_-rvXkBaEEeqnvrkiv2N5ww" org.eventb.core.comment="stronger safety invariant, induced from safe_fa_new" org.eventb.core.generated="false" org.eventb.core.label="predict_inv" org.eventb.core.predicate="∀t·t∈Rplus∧t∈closed(zero, now plus tact)⇒ T(t)∈closed(Tmin,Tmax)"/>
+<org.eventb.core.invariant name="_v2lljtMKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="type_ta" org.eventb.core.predicate="ta∈Rplus"/>
+<org.eventb.core.invariant name="_v2llj9MKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="type_fa" org.eventb.core.predicate="fa ∈ Rplus → R"/>
+<org.eventb.core.invariant name="_mA7-4hXNEeqk-IMJ3e_LQQ" org.eventb.core.comment="ensure fa is safe on a longer time frame, to cope with inertia" org.eventb.core.generated="false" org.eventb.core.label="safe_fa" org.eventb.core.predicate="s = RUN ⇒   (∀t·t∈Rplus∧t∈closed(now, (now plus ta) plus tact)⇒fa(t)∈closed(Tmin,Tmax))"/>
+<org.eventb.core.variable name="_mA7-6RXNEeqk-IMJ3e_LQQ" org.eventb.core.comment="initial condition: time" org.eventb.core.generated="false" org.eventb.core.identifier="t0"/>
+<org.eventb.core.variable name="_mA7-6hXNEeqk-IMJ3e_LQQ" org.eventb.core.comment="initial condition: temperature" org.eventb.core.generated="false" org.eventb.core.identifier="T0"/>
+<org.eventb.core.event name="_xvEFwBaEEeqnvrkiv2N5ww" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Progression">
+<org.eventb.core.refinesEvent name="_xvEFwRaEEeqnvrkiv2N5ww" org.eventb.core.target="Progression"/>
+<org.eventb.core.guard name="_v2mMmtMKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="s = RUN"/>
+<org.eventb.core.action name="_v2mMnNMKEembo_88jyb-4Q" org.eventb.core.assignment="now ≔ now plus ta" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_v2mMndMKEembo_88jyb-4Q" org.eventb.core.assignment="T ≔ (T   ({ t ∣ lt(now, t)} ◁ fa))" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_v2mMntMKEembo_88jyb-4Q" org.eventb.core.assignment="s ≔ DECISION" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_ZXIFEBXVEeqvTMrYrO0j1A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_ON_safe">
+<org.eventb.core.refinesEvent name="_ZXIFERXVEeqvTMrYrO0j1A" org.eventb.core.target="Prediction"/>
+<org.eventb.core.guard name="_JEETwBZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_JEETwRZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = ON"/>
+<org.eventb.core.guard name="_JEETwhZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_JEETwxZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Ton(t0,T0)"/>
+<org.eventb.core.guard name="_JEETxBZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Ton_dot(t0,T0)"/>
+<org.eventb.core.guard name="_JEETxRZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.label="sol_Ton_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.witness name="_v2nawdMKEembo_88jyb-4Q" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_hKhsARBbEeqMPa66P90xPg" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.witness name="_NEqYcBXWEeqvTMrYrO0j1A" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.action name="_WeF5INM_Eemjpt_4877rBQ" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_WeF5IdM_Eemjpt_4877rBQ" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_WeC10NM_Eemjpt_4877rBQ" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="__JgQ4NQFEemDM5Iimbqbaw" org.eventb.core.assignment="q ≔ ON" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.parameter name="_JEETxhZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_JEETxxZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.guard name="_7SsHOhZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_7SsHOxZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = fc"/>
+<org.eventb.core.guard name="_7SsHPBZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = fc_dot"/>
+<org.eventb.core.guard name="_7SsHPRZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_71TW8BZ5EeqDp5Lb-0N-dA" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="leq(Ton(t0,T0)((now plus deltaT) plus tact), Tmax)"/>
+<org.eventb.core.parameter name="_7SsHMhZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_7SsHMxZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_ZXIFEhXVEeqvTMrYrO0j1A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_ON_unsafe">
+<org.eventb.core.refinesEvent name="_ZXIFExXVEeqvTMrYrO0j1A" org.eventb.core.target="Prediction"/>
+<org.eventb.core.witness name="_LVF-xQ90Eeq5Go8Efuh5ew" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_25_hgRD9Eeq7Ud-DnFuabA" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.action name="_LVF-xg90Eeq5Go8Efuh5ew" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_LVF-xw90Eeq5Go8Efuh5ew" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_LVF-yA90Eeq5Go8Efuh5ew" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_LVF-2g90Eeq5Go8Efuh5ew" org.eventb.core.assignment="q ≔ ONOFF" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.witness name="_mBFv5hXNEeqk-IMJ3e_LQR" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.parameter name="_7SsHMBZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_7SsHMRZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.guard name="_7SsHNBZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_7SsHNRZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = ON"/>
+<org.eventb.core.guard name="_7SsHNhZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_7SsHNxZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Ton(t0,T0)"/>
+<org.eventb.core.guard name="_7SsHOBZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Ton_dot(t0,T0)"/>
+<org.eventb.core.guard name="_7SsHORZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fc_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.guard name="_PUEDcBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_PUEDcRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = Tonoff(now,T(now))"/>
+<org.eventb.core.guard name="_PUEDchZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = Tonoff_dot(now,T(now))"/>
+<org.eventb.core.guard name="_PUEDcxZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_7S1RIBZ7EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="gt(Ton(t0,T0)((now plus deltaT) plus tact), Tmax)"/>
+<org.eventb.core.action name="_PxkxIA90Eeq5Go8Efuh5ew" org.eventb.core.assignment="t0 ≔ now" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_mA7-_BXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="T0 ≔  T(now)" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+<org.eventb.core.parameter name="_PUEDdBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_PUEDdRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_PUEDdhZ_EeqV2ahKnWlmRQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_OFFON_safe">
+<org.eventb.core.refinesEvent name="_PUEDdxZ_EeqV2ahKnWlmRQ" org.eventb.core.target="Prediction"/>
+<org.eventb.core.parameter name="_PUEDeBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_PUEDeRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.parameter name="_PUEDehZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_PUEDexZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+<org.eventb.core.guard name="_PUEDfBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_PUEDfRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = OFFON"/>
+<org.eventb.core.guard name="_PUEDfhZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_PUEDfxZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Ton(now,T(now))"/>
+<org.eventb.core.guard name="_PUEDgBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Ton_dot(now,T(now))"/>
+<org.eventb.core.guard name="_PUEDgRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_Ton_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.guard name="_PUEDghZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_PUEDgxZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = fc"/>
+<org.eventb.core.guard name="_PUEDhBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = fc_dot"/>
+<org.eventb.core.guard name="_PUEDhRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_PUEDhhZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="leq(Ton(now,T(now))((now plus deltaT) plus tact), Tmax)"/>
+<org.eventb.core.witness name="_mBFv7BXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_mBFv7RXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.witness name="_T9qQkBXWEeqvTMrYrO0j1A" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.action name="_LVF-1w90Eeq5Go8Efuh5ew" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_LVF-2A90Eeq5Go8Efuh5ew" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_LVF-2Q90Eeq5Go8Efuh5ew" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_eQ16QA94Eeq5Go8Efuh5ew" org.eventb.core.assignment="q ≔ ON" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_PUEDhxZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="t0 ≔ now" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_PUEDiBZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="T0 ≔  T(now)" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_PUEDiRZ_EeqV2ahKnWlmRQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_OFFON_unsafe">
+<org.eventb.core.refinesEvent name="_PUEDihZ_EeqV2ahKnWlmRQ" org.eventb.core.target="Prediction"/>
+<org.eventb.core.parameter name="_PUEDixZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_PUEDjBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.parameter name="_PUEDjRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_PUEDjhZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+<org.eventb.core.guard name="_PUEDjxZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_PUEDkBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = OFFON"/>
+<org.eventb.core.guard name="_PUEDkRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_PUEDkhZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Ton(now,T(now))"/>
+<org.eventb.core.guard name="_PUNNYBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Ton_dot(now,T(now))"/>
+<org.eventb.core.guard name="_PUNNYRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fc_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.guard name="_PUNNYhZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_PUNNYxZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = Tonoff(now,T(now))"/>
+<org.eventb.core.guard name="_PUNNZBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = Tonoff_dot(now,T(now))"/>
+<org.eventb.core.guard name="_PUNNZRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_PUNNZhZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="gt(Ton(now,T(now))((now plus deltaT) plus tact), Tmax)"/>
+<org.eventb.core.witness name="_mBFv9hXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_mBFv9xXNEeqk-IMJ3e_LQQ" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.witness name="_mBFv9xXNEeqk-IMJ3e_LQR" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.action name="_mA7_CBXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_mA7_CRXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_mA7_ChXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_mBFv-xXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="q ≔ ONOFF" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_PUNNZxZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="t0 ≔ now" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_PUNNaBZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="T0 ≔  T(now)" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_ZXIFFBXVEeqvTMrYrO0j1A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_OFF_safe">
+<org.eventb.core.refinesEvent name="_ZXIFFRXVEeqvTMrYrO0j1A" org.eventb.core.target="Prediction"/>
+<org.eventb.core.witness name="_PUNNaRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_PUNNahZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.witness name="_PUNNaxZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.action name="_mBFv5BXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_mBFv5RXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_mBFv5hXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_PUNNbxZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="q ≔ OFF" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="_nT0EUBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_nT0EURaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = OFF"/>
+<org.eventb.core.guard name="_nT0EUhaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT0EUxaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Toff(t0,T0)"/>
+<org.eventb.core.guard name="_nT0EVBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Toff_dot(t0,T0)"/>
+<org.eventb.core.guard name="_nT0rYBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_Ton_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.guard name="_nT0rYRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT0rYhaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = fc"/>
+<org.eventb.core.guard name="_nT0rYxaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = fc_dot"/>
+<org.eventb.core.guard name="_nT0rZBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_nT0rZRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="leq(Tmin, Toff(t0,T0)((now plus deltaT) plus tact))"/>
+<org.eventb.core.parameter name="_vo11kBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_vo2coBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.parameter name="_vo2coRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_vo2cohaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_ZXIFFhXVEeqvTMrYrO0j1A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_OFF_unsafe">
+<org.eventb.core.refinesEvent name="_ZXIFFxXVEeqvTMrYrO0j1A" org.eventb.core.target="Prediction"/>
+<org.eventb.core.witness name="_PUNNcBZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_PUNNcRZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.witness name="_PUNNchZ_EeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.action name="_mBFv7hXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_mBFv7xXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_mBFv8BXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_PUNNdhZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="q ≔ OFFON" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="_nT15gBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_nT15gRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = OFF"/>
+<org.eventb.core.guard name="_nT15ghaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT15gxaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Toff(t0,T0)"/>
+<org.eventb.core.guard name="_nT15hBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Toff_dot(t0,T0)"/>
+<org.eventb.core.guard name="_nT15hRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fc_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.guard name="_nT15hhaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT2gkBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = Toffon(now,T(now))"/>
+<org.eventb.core.guard name="_nT2gkRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = Toffon_dot(now,T(now))"/>
+<org.eventb.core.guard name="_nT2gkhaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_nT2gkxaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="gt(Tmin, Toff(t0,T0)((now plus deltaT) plus tact))"/>
+<org.eventb.core.action name="_nT2glBaDEeqV2ahKnWlmRQ" org.eventb.core.assignment="t0 ≔ now" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_nT2glRaDEeqV2ahKnWlmRQ" org.eventb.core.assignment="T0 ≔  T(now)" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+<org.eventb.core.parameter name="_vo4R0BaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_vo4R0RaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.parameter name="_vo4R0haDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_vo4R0xaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_nT2glhaDEeqV2ahKnWlmRQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_ONOFF_safe">
+<org.eventb.core.refinesEvent name="_nT3HoBaDEeqV2ahKnWlmRQ" org.eventb.core.target="Prediction"/>
+<org.eventb.core.parameter name="_vo4R1BaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_vo4R1RaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.parameter name="_vo444BaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_vo444RaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+<org.eventb.core.guard name="_nT3HoRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_nT3HohaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = ONOFF"/>
+<org.eventb.core.guard name="_nT3HoxaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT3HpBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Toff(now,T(now))"/>
+<org.eventb.core.guard name="_nT3HpRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Toff_dot(now,T(now))"/>
+<org.eventb.core.guard name="_nT3HphaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_Ton_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.guard name="_nT3usBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT3usRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = fc"/>
+<org.eventb.core.guard name="_nT3ushaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = fc_dot"/>
+<org.eventb.core.guard name="_nT3usxaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_nT3utBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="leq(Tmin, Toff(now,T(now))((now plus deltaT) plus tact))"/>
+<org.eventb.core.witness name="_nT3utRaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_nT3uthaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.witness name="_nT4VwBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.action name="_mBFv-BXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_mBFv-RXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_mBFv-hXNEeqk-IMJ3e_LQQ" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_nT4VxBaDEeqV2ahKnWlmRQ" org.eventb.core.assignment="q ≔ OFF" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_nT4VxRaDEeqV2ahKnWlmRQ" org.eventb.core.assignment="t0 ≔ now" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_nT4VxhaDEeqV2ahKnWlmRQ" org.eventb.core.assignment="T0 ≔  T(now)" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_nT4VxxaDEeqV2ahKnWlmRQ" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prediction_ONOFF_unsafe">
+<org.eventb.core.refinesEvent name="_nT480BaDEeqV2ahKnWlmRQ" org.eventb.core.target="Prediction"/>
+<org.eventb.core.parameter name="_vo6uEBaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc"/>
+<org.eventb.core.parameter name="_vo6uERaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fc_dot"/>
+<org.eventb.core.parameter name="_vo6uEhaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp"/>
+<org.eventb.core.parameter name="_vo6uExaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.identifier="fp_dot"/>
+<org.eventb.core.guard name="_nT480RaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sys_mode" org.eventb.core.predicate="s = DECISION"/>
+<org.eventb.core.guard name="_nT480haDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="mode" org.eventb.core.predicate="q = ONOFF"/>
+<org.eventb.core.guard name="_nT480xaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fc" org.eventb.core.predicate="fc ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT481BaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc" org.eventb.core.predicate="fc = Toff(now,T(now))"/>
+<org.eventb.core.guard name="_nT481RaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fc_dot" org.eventb.core.predicate="fc_dot = Toff_dot(now,T(now))"/>
+<org.eventb.core.guard name="_nT481haDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fc_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fc_dot, fc)"/>
+<org.eventb.core.guard name="_nT5j4BaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tp_fp" org.eventb.core.predicate="fp ∈ Rplus → R"/>
+<org.eventb.core.guard name="_nT5j4RaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp" org.eventb.core.predicate="fp = Toffon(now,T(now))"/>
+<org.eventb.core.guard name="_nT5j4haDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="id_fp_dot" org.eventb.core.predicate="fp_dot = Toffon_dot(now,T(now))"/>
+<org.eventb.core.guard name="_nT5j4xaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="sol_fp_dot" org.eventb.core.predicate="solutionOf(lclosed(now), fp_dot, fp)"/>
+<org.eventb.core.guard name="_nT5j5BaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="exact_state" org.eventb.core.predicate="gt(Tmin, Toff(now,T(now))((now plus deltaT) plus tact))"/>
+<org.eventb.core.witness name="_nT5j5RaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="tx" org.eventb.core.predicate="tx = deltaT"/>
+<org.eventb.core.witness name="_nT5j5haDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="f" org.eventb.core.predicate="f = fp"/>
+<org.eventb.core.witness name="_nT6K8BaDEeqV2ahKnWlmRQ" org.eventb.core.generated="false" org.eventb.core.label="e" org.eventb.core.predicate="e = fp_dot"/>
+<org.eventb.core.action name="_PUNNbBZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="s ≔ RUN" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_PUNNbRZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="ta ≔ deltaT" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_PUNNbhZ_EeqV2ahKnWlmRQ" org.eventb.core.assignment="fa ≔ fp" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_nT6K9BaDEeqV2ahKnWlmRQ" org.eventb.core.assignment="q ≔ OFFON" org.eventb.core.generated="false" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_nT6K9RaDEeqV2ahKnWlmRQ" org.eventb.core.assignment="t0 ≔ now" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="_nT6K9haDEeqV2ahKnWlmRQ" org.eventb.core.assignment="T0 ≔  T(now)" org.eventb.core.generated="false" org.eventb.core.label="act6"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="_ahWzkBaFEeqnvrkiv2N5ww" org.eventb.core.generated="false" org.eventb.core.label="safety" org.eventb.core.predicate="∀t·t∈Rplus∧t∈closed(zero, now)⇒ T(t)∈closed(Tmin,Tmax)" org.eventb.core.theorem="true"/>
+</org.eventb.core.machineFile>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poFile org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.poIdentifier name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
@@ -124,7 +124,7 @@
 <org.eventb.core.poIdentifier name="ta'" org.eventb.core.type="R"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPx_q" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTIDENTx_q" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poSequent name="Progression/type_T/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poSequent name="Progression/type_T/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTALLHYPx_r"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="T(lopen(now) ◁ fa)∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#_FeNbI8l8EemXKq5DT9V6Mw"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA"/>
@@ -133,7 +133,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poSequent#Progression\/type_T\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#HYPC:|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="Progression/type_now/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poSequent name="Progression/type_now/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTALLHYPx_r"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="now plus ta∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#_O_A9kM8PEemJc8461NYSaQ"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA"/>
@@ -142,7 +142,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poSequent#Progression\/type_now\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#HYPC:|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="Progression/safety/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poSequent name="Progression/safety/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTALLHYPx_r"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now plus ta)⇒(T(lopen(now) ◁ fa))(t)∈closed(Tmin,Tmax)" org.eventb.core.source="/ex-heating-continuous/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#_v-AbMBHLEeq_b9yCMMHRxA"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA"/>
@@ -151,7 +151,7 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poSequent#Progression\/safety\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#HYPC&gt;|org.eventb.core.poPredicate#PRD3"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="Progression/safe_fa/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+<org.eventb.core.poSequent name="Progression/safe_fa/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTALLHYPx_r"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="DECISION=RUN⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))∧t∈openclosed(now plus ta,(now plus ta) plus ta)⇒fa(t)∈closed(Tmin,Tmax))" org.eventb.core.source="/ex-heating-continuous/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.invariant#_lXws4M_uEemwPcSFrbo7KA"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA"/>
@@ -160,30 +160,12 @@
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poSequent#Progression\/safe_fa\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="Progression/grd2/GRD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTALLHYPx_r"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ta∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA|org.eventb.core.guard#_vU0FPhqHEeqm8efmISDIzA"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA|org.eventb.core.guard#_vU0FPhqHEeqm8efmISDIzA"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-continuous/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#_yxW_kBD6EeqvgaQadm8N1A"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poSequent#Progression\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="Progression/grd3/GRD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="1">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTALLHYPx_r"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="fa∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA|org.eventb.core.guard#_vU0FPxqHEeqm8efmISDIzA"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/ex-heating-continuous/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#_vU0FOhqHEeqm8efmISDIzA|org.eventb.core.guard#_vU0FPxqHEeqm8efmISDIzA"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/ex-heating-continuous/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#_yxW_kBD6EeqvgaQadm8N1A"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poSequent#Progression\/grd3\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTx_r" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="EVTIDENTx_r" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="2">
 <org.eventb.core.poIdentifier name="T'" org.eventb.core.type="ℙ(R×R)"/>
-<org.eventb.core.poIdentifier name="tx" org.eventb.core.type="R"/>
 <org.eventb.core.poIdentifier name="now'" org.eventb.core.type="R"/>
 <org.eventb.core.poIdentifier name="s'" org.eventb.core.type="sysSTATE"/>
-<org.eventb.core.poIdentifier name="fx" org.eventb.core.type="ℙ(R×R)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPx_r" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTIDENTx_r" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="EVTALLHYPx_r" org.eventb.core.parentSet="/ex-heating-continuous/M3.bpo|org.eventb.core.poFile#M3|org.eventb.core.poPredicateSet#EVTIDENTx_r" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s=RUN" org.eventb.core.source="/ex-heating-continuous/M3.bum|org.eventb.core.machineFile#M3|org.eventb.core.event#_yxW_kBD6EeqvgaQadm8N1A|org.eventb.core.guard#_hRQdMNCAEemsXo-iaiPxgQ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poSequent name="Prediction/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="1">

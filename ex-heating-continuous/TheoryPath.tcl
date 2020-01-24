@@ -6,6 +6,5 @@
 </org.eventb.theory.core.scAvailableTheoryProject>
 <org.eventb.theory.core.scAvailableTheoryProject name="(" org.eventb.core.source="/ex-heating-continuous/TheoryPath.tul|org.eventb.theory.core.theoryLanguageRoot#TheoryPath|org.eventb.theory.core.availableTheoryProject#(" org.eventb.theory.core.availableTheoryProject="/ex-heating-continuous">
 <org.eventb.theory.core.scAvailableTheory name="THYPH_0" org.eventb.core.source="/ex-heating-continuous/TheoryPath.tul|org.eventb.theory.core.theoryLanguageRoot#TheoryPath|org.eventb.theory.core.availableTheoryProject#(|org.eventb.theory.core.availableTheory#'" org.eventb.theory.core.availableTheory="/ex-heating-continuous/Temperature.dtf|org.eventb.theory.core.deployedTheoryRoot#Temperature"/>
-<org.eventb.theory.core.scAvailableTheory name="THYPH_1" org.eventb.core.source="/ex-heating-continuous/TheoryPath.tul|org.eventb.theory.core.theoryLanguageRoot#TheoryPath|org.eventb.theory.core.availableTheoryProject#(|org.eventb.theory.core.availableTheory#(" org.eventb.theory.core.availableTheory="/ex-heating-continuous/TemperatureExtra.dtf|org.eventb.theory.core.deployedTheoryRoot#TemperatureExtra"/>
 </org.eventb.theory.core.scAvailableTheoryProject>
 </org.eventb.theory.core.scTheoryLanguageRoot>

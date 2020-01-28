@@ -1,9 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.psFile>
-<org.eventb.core.psStatus name="prop_Ton_init_tact/WD" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psBroken="true" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="prop_Ton_init_tact/THM" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psBroken="true" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="prop_Ton_Toff_deltaT/WD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="prop_Ton_Toff_deltaT/THM" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psBroken="true" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="prop_Toff_Ton_deltaT/WD" org.eventb.core.confidence="-99" org.eventb.core.poStamp="0" org.eventb.core.psManual="true"/>
-<org.eventb.core.psStatus name="prop_Toff_Ton_deltaT/THM" org.eventb.core.confidence="0" org.eventb.core.poStamp="0" org.eventb.core.psBroken="true" org.eventb.core.psManual="true"/>
-</org.eventb.core.psFile>
+<org.eventb.core.psFile/>

@@ -2451,26 +2451,6 @@
 <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λt⦂R·t∈(Rplus ⦂ ℙ(R)) ∣ (t0 sub t) plus v0"/>
 </org.eventb.theory.core.scNewOperatorDefinition>
 <org.eventb.theory.core.scAxiomaticOperatorDefinition name="tact" org.eventb.core.label="tact" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.axiomaticDefinitionsBlock#-|org.eventb.theory.core.axiomaticOperatorDefinition#0" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R" org.eventb.theory.core.wd="⊤"/>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff_dot" org.eventb.core.label="Tonoff_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ neg((now sub (tact ⦂ R)) plus (now sub (tact ⦂ R))),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff" org.eventb.core.label="Tonoff" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 sub Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon_dot" org.eventb.core.label="Toffon_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ (now sub (tact ⦂ R)) plus (now sub (tact ⦂ R)),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon" org.eventb.core.label="Toffon" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 plus Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
 </org.eventb.core.lang>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
@@ -2516,29 +2496,36 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))">
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE)">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="x_p'" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Ta0'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta0')∧Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))">
-<org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta0')∧Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
-<org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE)">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE">
+<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta0')∧Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.prIdent name="x_p'" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="x_p'" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈dom(Ta0')∧Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
@@ -2548,18 +2535,18 @@
 <org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Ta0'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta0')∧Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))">
+<org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀Ta'⦂ℙ(R×R)·Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
-<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="Ta0'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))">
+<org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE">
-<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
-<org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀Ta'⦂ℙ(R×R)·Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))">
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
@@ -2567,26 +2554,19 @@
 <org.eventb.core.prPred name="p16" org.eventb.core.predicate="Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE">
-<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
-<org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
-<org.eventb.core.prIdent name="x_p'" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta0')∧Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta0')∧Ta0'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="Ta0'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))">
-<org.eventb.core.prIdent name="Ta0'" org.eventb.core.type="ℙ(R×R)"/>
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="Rplus ⦂ ℙ(R)"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-<org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/act1/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="t,x,x0,x1" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.psManual="true">
 <org.eventb.core.lang name="L">
@@ -4963,26 +4943,6 @@
 <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λt⦂R·t∈(Rplus ⦂ ℙ(R)) ∣ (t0 sub t) plus v0"/>
 </org.eventb.theory.core.scNewOperatorDefinition>
 <org.eventb.theory.core.scAxiomaticOperatorDefinition name="tact" org.eventb.core.label="tact" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.axiomaticDefinitionsBlock#-|org.eventb.theory.core.axiomaticOperatorDefinition#0" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R" org.eventb.theory.core.wd="⊤"/>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff_dot" org.eventb.core.label="Tonoff_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ neg((now sub (tact ⦂ R)) plus (now sub (tact ⦂ R))),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff" org.eventb.core.label="Tonoff" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 sub Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon_dot" org.eventb.core.label="Toffon_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ (now sub (tact ⦂ R)) plus (now sub (tact ⦂ R)),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon" org.eventb.core.label="Toffon" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 plus Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
 </org.eventb.core.lang>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
@@ -5020,10 +4980,6 @@
 </org.eventb.core.prRule>
 <org.eventb.core.prIdent name="Ta" org.eventb.core.type="ℙ(R×R)"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))">
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="t∈dom(Ta)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
@@ -5033,36 +4989,40 @@
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
-<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))">
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="Rplus ⦂ ℙ(R)"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-<org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/safety/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.lang name="L">
@@ -5224,26 +5184,6 @@
 <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λt⦂R·t∈(Rplus ⦂ ℙ(R)) ∣ (t0 sub t) plus v0"/>
 </org.eventb.theory.core.scNewOperatorDefinition>
 <org.eventb.theory.core.scAxiomaticOperatorDefinition name="tact" org.eventb.core.label="tact" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.axiomaticDefinitionsBlock#-|org.eventb.theory.core.axiomaticOperatorDefinition#0" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R" org.eventb.theory.core.wd="⊤"/>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff_dot" org.eventb.core.label="Tonoff_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ neg((now sub (tact ⦂ R)) plus (now sub (tact ⦂ R))),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff" org.eventb.core.label="Tonoff" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 sub Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon_dot" org.eventb.core.label="Toffon_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ (now sub (tact ⦂ R)) plus (now sub (tact ⦂ R)),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon" org.eventb.core.label="Toffon" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 plus Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
 </org.eventb.core.lang>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p0">
@@ -5260,12 +5200,9 @@
 <org.eventb.core.prIdent name="Ta'" org.eventb.core.type="ℙ(R×R)"/>
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊥"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
-<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧⊥"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊥"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax)"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
@@ -5277,10 +5214,13 @@
 <org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧⊥"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Prophecy/safety/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="D">
 <org.eventb.core.lang name="L">
@@ -5629,26 +5569,6 @@
 <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λt⦂R·t∈(Rplus ⦂ ℙ(R)) ∣ (t0 sub t) plus v0"/>
 </org.eventb.theory.core.scNewOperatorDefinition>
 <org.eventb.theory.core.scAxiomaticOperatorDefinition name="tact" org.eventb.core.label="tact" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.axiomaticDefinitionsBlock#-|org.eventb.theory.core.axiomaticOperatorDefinition#0" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R" org.eventb.theory.core.wd="⊤"/>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff_dot" org.eventb.core.label="Tonoff_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ neg((now sub (tact ⦂ R)) plus (now sub (tact ⦂ R))),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff" org.eventb.core.label="Tonoff" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 sub Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon_dot" org.eventb.core.label="Toffon_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ (now sub (tact ⦂ R)) plus (now sub (tact ⦂ R)),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon" org.eventb.core.label="Toffon" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 plus Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
 </org.eventb.core.lang>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p0">
@@ -5668,25 +5588,25 @@
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
 <org.eventb.core.prIdent name="x_p'" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤⇒⊥"/>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="⊥"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)">
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))⇒x_p'∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE)"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE">
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax)"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))⇒x_p'∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE)"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(x_p'(t))=TRUE)"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Prophecy/type_now/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.psManual="true">
 <org.eventb.core.lang name="L">
@@ -7325,32 +7245,12 @@
 <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λt⦂R·t∈(Rplus ⦂ ℙ(R)) ∣ (t0 sub t) plus v0"/>
 </org.eventb.theory.core.scNewOperatorDefinition>
 <org.eventb.theory.core.scAxiomaticOperatorDefinition name="tact" org.eventb.core.label="tact" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.axiomaticDefinitionsBlock#-|org.eventb.theory.core.axiomaticOperatorDefinition#0" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R" org.eventb.theory.core.wd="⊤"/>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff_dot" org.eventb.core.label="Tonoff_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ neg((now sub (tact ⦂ R)) plus (now sub (tact ⦂ R))),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff" org.eventb.core.label="Tonoff" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 sub Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon_dot" org.eventb.core.label="Toffon_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ (now sub (tact ⦂ R)) plus (now sub (tact ⦂ R)),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon" org.eventb.core.label="Toffon" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 plus Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
 </org.eventb.core.lang>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
 <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7"/>
-<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p6,p7">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7,p6">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
@@ -7367,7 +7267,7 @@
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p14">
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
-<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p7">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p6">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
 <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p14"/>
 </org.eventb.core.prAnte>
@@ -7376,7 +7276,7 @@
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
 <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p17">
-<org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p6"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -7449,72 +7349,72 @@
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
 <org.eventb.core.prIdent name="x_p'" org.eventb.core.type="ℙ(R×D)"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))">
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL"/>
-<org.eventb.core.prPred name="p24" org.eventb.core.predicate="x_p'∈(R ⦂ ℙ(R)) ⇸ D"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))))∧(Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))∧x_p'∈(Rplus ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL))"/>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL)"/>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="x_p'(t)∈D">
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax)"/>
 <org.eventb.core.prPred name="p21" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="x_p'∈(R ⦂ ℙ(R)) ⇸ D"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="x_p'(t)∈D">
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE">
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="P∈D ⇸ BOOL"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax)"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="(⊤⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))))∧(⊤∧⊤∧x_p'∈(Rplus ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL))"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE">
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))">
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p25" org.eventb.core.predicate="x_p'(t)∈dom(P)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))))∧(Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))∧x_p'∈(Rplus ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL))"/>
 <org.eventb.core.prPred name="p17" org.eventb.core.predicate="Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="⊤"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D"/>
-<org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧(x_p'∈(Rplus ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL))"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)">
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="x_p'∈(Rplus ⦂ ℙ(R)) → D"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧(x_p'∈(Rplus ⦂ ℙ(R)) → D⇒(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒t∈dom(x_p')∧x_p'∈(R ⦂ ℙ(R)) ⇸ D∧x_p'(t)∈dom(P)∧P∈D ⇸ BOOL))"/>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="t∈dom(x_p')">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="P∈D → BOOL"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈(Rplus ⦂ ℙ(R))⇒t∈dom(Ta')∧Ta'∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
+</org.eventb.core.prPred>
 <org.eventb.core.prPred name="p16" org.eventb.core.predicate="t∈dom(Ta')">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prExpr name="e1" org.eventb.core.expression="D"/>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="Rplus ⦂ ℙ(R)"/>
+<org.eventb.core.prExpr name="e1" org.eventb.core.expression="D"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-<org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgGoal"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgGoal"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r10" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r10" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/x_p'/WFIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="D" org.eventb.core.psManual="true">
 <org.eventb.core.lang name="L">
@@ -7914,26 +7814,6 @@
 <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λt⦂R·t∈(Rplus ⦂ ℙ(R)) ∣ (t0 sub t) plus v0"/>
 </org.eventb.theory.core.scNewOperatorDefinition>
 <org.eventb.theory.core.scAxiomaticOperatorDefinition name="tact" org.eventb.core.label="tact" org.eventb.core.predicate="⊤" org.eventb.core.source="/ex-heating-continuous/Temperature.tuf|org.eventb.theory.core.theoryRoot#Temperature|org.eventb.theory.core.axiomaticDefinitionsBlock#-|org.eventb.theory.core.axiomaticOperatorDefinition#0" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="R" org.eventb.theory.core.wd="⊤"/>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff_dot" org.eventb.core.label="Tonoff_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element1|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ neg((now sub (tact ⦂ R)) plus (now sub (tact ⦂ R))),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Tonoff" org.eventb.core.label="Tonoff" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.operatorArgument#)" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element2|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 sub Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon_dot" org.eventb.core.label="Toffon_dot" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="DE(R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element4|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="ivp(λnow⦂R ↦ vnow⦂R·now ↦ vnow∈(Rplus ⦂ ℙ(R)) × (R ⦂ ℙ(R)) ∣ (now sub (tact ⦂ R)) plus (now sub (tact ⦂ R)),t0,v0)"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
-<org.eventb.theory.core.scNewOperatorDefinition name="Toffon" org.eventb.core.label="Toffon" org.eventb.core.predicate="t0∈(Rplus ⦂ ℙ(R))" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(R×R)" org.eventb.theory.core.wd="⊤">
-<org.eventb.theory.core.scOperatorArgument name="t0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scOperatorArgument name="v0" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="R"/>
-<org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/ex-heating-continuous/TemperatureExtra.tuf|org.eventb.theory.core.theoryRoot#TemperatureExtra|org.eventb.theory.core.newOperatorDefinition#element5|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λnow⦂R·now∈(Rplus ⦂ ℙ(R)) ∣ v0 plus Rsqr((now sub t0) sub (tact ⦂ R))"/>
-</org.eventb.theory.core.scNewOperatorDefinition>
 </org.eventb.core.lang>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p0">
@@ -7950,13 +7830,9 @@
 <org.eventb.core.prIdent name="Ta'" org.eventb.core.type="ℙ(R×R)"/>
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊥"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="⊥∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
-<org.eventb.core.prPred name="p4" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
-<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
-<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊥"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
@@ -7967,9 +7843,13 @@
 <org.eventb.core.prIdent name="P" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Ta'∈(Rplus ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D">
+<org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
+<org.eventb.core.prIdent name="xp_prophecy" org.eventb.core.type="ℙ(R×D)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="⊥∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>

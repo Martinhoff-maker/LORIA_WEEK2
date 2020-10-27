@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1575900834308" org.eventb.texttools.text_representation="context C1 extends C0&#10;&#10;constants Tmax Tmin&#10;&#10;axioms&#10;  @type_Tmax Tmax ∈ R&#10;  @type_Tmin Tmin ∈ R&#10;  @Tmin_lt_Tmax lt(Tmin, Tmax) // Tmin&lt;Tmax&#10;end&#10;" version="3">
-<org.eventb.core.extendsContext name="_FCn1cBqIEeqm8efmISDIzA" org.eventb.core.target="C0"/>
-<org.eventb.core.constant name="_Ic58QBqOEeqTbqgIAHD0aQ" org.eventb.core.generated="false" org.eventb.core.identifier="Tmax"/>
-<org.eventb.core.constant name="_Ic58QRqOEeqTbqgIAHD0aQ" org.eventb.core.generated="false" org.eventb.core.identifier="Tmin"/>
-<org.eventb.core.axiom name="_Ic58QhqOEeqTbqgIAHD0aQ" org.eventb.core.generated="false" org.eventb.core.label="type_Tmax" org.eventb.core.predicate="Tmax ∈ R"/>
-<org.eventb.core.axiom name="_Ic58QxqOEeqTbqgIAHD0aQ" org.eventb.core.generated="false" org.eventb.core.label="type_Tmin" org.eventb.core.predicate="Tmin ∈ R"/>
-<org.eventb.core.axiom name="_Ic58RBqOEeqTbqgIAHD0aQ" org.eventb.core.comment="Tmin&lt;Tmax" org.eventb.core.generated="false" org.eventb.core.label="Tmin_lt_Tmax" org.eventb.core.predicate="lt(Tmin, Tmax)"/>
-</org.eventb.core.contextFile>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1574847805548" org.eventb.texttools.text_representation="context C2 extends C1&#10;&#10;sets sysSTATE // close-loop state&#10;&#10;&#10;constants RUN DECISION&#10;&#10;axioms&#10;  @partition_sysSTATE partition(sysSTATE, {RUN}, {DECISION})&#10;end&#10;" version="3">
-<org.eventb.core.extendsContext name="_vfPAELT7EemJGLv7ul_LsQ" org.eventb.core.target="C2"/>
-<org.eventb.core.carrierSet name="_nYOBQM8IEemJc8461NYSaQ" org.eventb.core.comment="close-loop state" org.eventb.core.generated="false" org.eventb.core.identifier="sysSTATE"/>
-<org.eventb.core.constant name="_nYOBQc8IEemJc8461NYSaQ" org.eventb.core.generated="false" org.eventb.core.identifier="RUN"/>
-<org.eventb.core.constant name="_nYOBQs8IEemJc8461NYSaQ" org.eventb.core.generated="false" org.eventb.core.identifier="DECISION"/>
-<org.eventb.core.axiom name="_nYOBQ88IEemJc8461NYSaQ" org.eventb.core.generated="false" org.eventb.core.label="partition_sysSTATE" org.eventb.core.predicate="partition(sysSTATE, {RUN}, {DECISION})"/>
-</org.eventb.core.contextFile>

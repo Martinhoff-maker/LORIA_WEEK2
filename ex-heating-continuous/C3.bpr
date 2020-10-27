@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.prFile version="1">
-<org.eventb.core.prProof name="prop_Ton_mono_inc/WD"/>
-<org.eventb.core.prProof name="prop_Toff_mono_dec/WD"/>
-<org.eventb.core.prProof name="prop_Toff_act/WD"/>
-<org.eventb.core.prProof name="prop_Ton_act/WD"/>
-</org.eventb.core.prFile>

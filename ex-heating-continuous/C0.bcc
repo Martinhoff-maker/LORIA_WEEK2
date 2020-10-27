@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
-<org.eventb.core.scAxiom name="'" org.eventb.core.label="type_P" org.eventb.core.predicate="P∈D → BOOL" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_5yLLAxp-EeqHBPFRkaVZGw" org.eventb.core.theorem="false"/>
-<org.eventb.core.scAxiom name="(" org.eventb.core.label="prophecy_x" org.eventb.core.predicate="xp_prophecy∈(Rplus ⦂ ℙ(R)) → D∧(∀t⦂R·t∈(Rplus ⦂ ℙ(R))⇒P(xp_prophecy(t))=TRUE)" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#_Oa3tUhp_EeqHBPFRkaVZGw" org.eventb.core.theorem="false"/>
-<org.eventb.core.scCarrierSet name="D" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.carrierSet#_5yLLABp-EeqHBPFRkaVZGw" org.eventb.core.type="ℙ(D)"/>
-<org.eventb.core.scConstant name="P" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#_j5hCYBqOEeqTbqgIAHD0aQ" org.eventb.core.type="ℙ(D×BOOL)"/>
-<org.eventb.core.scConstant name="xp_prophecy" org.eventb.core.source="/ex-heating-continuous/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.constant#_j5hCYRqOEeqTbqgIAHD0aQ" org.eventb.core.type="ℙ(R×D)"/>
-</org.eventb.core.scContextFile>

@@ -1314,18 +1314,19 @@
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="p9,p10">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p2">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p10,p11">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p2">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="p10"/>
 </org.eventb.core.prAnte>
@@ -1333,11 +1334,11 @@
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p13">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p2"/>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p14">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p15">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p1">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="p10"/>
 </org.eventb.core.prAnte>
@@ -1345,8 +1346,8 @@
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p15">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p1"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -1365,21 +1366,22 @@
 <org.eventb.core.prIdent name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈dom(Ta)">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="t∈dom(Ta)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Ta∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="t∈dom(T)">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈dom(T)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE">
@@ -1390,28 +1392,28 @@
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="t∈closed(zero ⦂ R,now)">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="t∈closed(zero ⦂ R,now)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(Ta)∧Ta∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="T∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="Rpos ⦂ ℙ(R)"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="safety/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="t" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
 <org.eventb.core.lang name="L">
@@ -1854,8 +1856,8 @@
 <org.eventb.core.prIdent name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/type_now/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
@@ -2061,7 +2063,7 @@
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p14,p15">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p2,p3,p14,p7,p9,p10,p8,p5,p6,p15">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p5,p2,p6,p3,p7,p8,p9,p10,p14,p15">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -2088,7 +2090,7 @@
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="Pa∈D → BOOL"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="f0=(λt⦂R·t∈(Rpos ⦂ ℙ(R)) ∣ Tmin)"/>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)=f0(t)">
@@ -2097,17 +2099,17 @@
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="lt(Tmin,Tmax)"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="leq(Tmin,Tmax)"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈closed(zero ⦂ R,zero ⦂ R)">
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="t∈closed(zero ⦂ R,zero ⦂ R)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)=f0(t)"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="T'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,zero ⦂ R)⇒T'(t)=Tmin)"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="t,T0'" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.lang name="L">
@@ -2216,8 +2218,8 @@
 <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
 <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p10">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
-<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p14"/>
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
@@ -2269,7 +2271,7 @@
 <org.eventb.core.prIdent name="T0'" org.eventb.core.type="ℙ(R×R)"/>
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="T0'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))">
@@ -2287,7 +2289,7 @@
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈closed(zero ⦂ R,zero ⦂ R)">
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈closed(zero ⦂ R,zero ⦂ R)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Ta'∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))∧(∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Ta'(t)∈closed(Tmin,Tmax))">
@@ -2305,13 +2307,13 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="Rpos ⦂ ℙ(R)"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="INITIALISATION/act1/FIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.psManual="true">
 <org.eventb.core.lang name="L">
@@ -2582,27 +2584,28 @@
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
-<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="p8,p9">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="p1">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
-<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="p9,p10">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p9"/>
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p12">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p1"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -2621,6 +2624,7 @@
 <org.eventb.core.prIdent name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="⊤"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
@@ -2632,37 +2636,37 @@
 <org.eventb.core.prIdent name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p5" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="t∈openclosed(now,now plus tx)">
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="t∈openclosed(now,now plus tx)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="t∈dom(fx)">
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="t∈dom(fx)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="Rpos ⦂ ℙ(R)"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Prophecy/type_T/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
 <org.eventb.core.lang name="L">
@@ -2753,10 +2757,11 @@
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p10"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1,p3,p4">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
 </org.eventb.core.prRule>
@@ -2776,7 +2781,8 @@
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="tx∈(Rpos ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="T(lopen(now) ◁ fx)∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
@@ -2789,7 +2795,7 @@
 <org.eventb.core.prIdent name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒fx(t)∈closed(Tmin,Tmax)"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
@@ -3848,22 +3854,23 @@
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p8">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="p9">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p12,p13">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p8">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p13,p14">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p9">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
@@ -3871,11 +3878,11 @@
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p16">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p17">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p9"/>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p17">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p18">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="p1">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
@@ -3883,8 +3890,8 @@
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p18">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="p1"/>
+<org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p19">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p1"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -3892,19 +3899,19 @@
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p19">
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p20">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p20">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p21">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p23">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p24">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p13,p24">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p8">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p26" org.eventb.core.prHyps="p13,p25">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p26" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p9">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
@@ -3912,11 +3919,11 @@
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p16">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p17">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p9"/>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p26">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p26" org.eventb.core.prHyps="p2">
+<org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p27">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p27" org.eventb.core.prHyps="p2">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
@@ -3924,8 +3931,8 @@
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p27">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p27" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p28">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p28" org.eventb.core.prHyps="p2"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -3933,17 +3940,17 @@
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p28">
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p28" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p30" org.eventb.core.prHyps="p29">
-<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p30" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p31">
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p29">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p29" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p30">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees t)" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p32">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
-<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p33" org.eventb.core.prHyps="p32,p13">
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p33" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p8">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p34" org.eventb.core.prHyps="p13,p33">
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p34" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p16">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p9">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p13"/>
 </org.eventb.core.prAnte>
@@ -3951,8 +3958,8 @@
 <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
-<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p16">
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p16" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p17">
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p9"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -3983,85 +3990,86 @@
 <org.eventb.core.prIdent name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒f(t)=T(t)"/>
+<org.eventb.core.prPred name="p21" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒f(t)=T(t)"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="fx∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))⇒Pa(d_prophecy(t))=TRUE">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="Pa" org.eventb.core.type="ℙ(D×BOOL)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p15" org.eventb.core.predicate="t∈dom(f)">
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="t∈dom(f)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p27" org.eventb.core.predicate="fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p23" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p32" org.eventb.core.predicate="t∈lopen(now plus tx)">
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="t∈lopen(now plus tx)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p7" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="Tmin∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmin" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p28" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))"/>
-<org.eventb.core.prPred name="p33" org.eventb.core.predicate="t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p18" org.eventb.core.predicate="T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p17" org.eventb.core.predicate="t∈dom(T)">
+<org.eventb.core.prPred name="p19" org.eventb.core.predicate="T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p18" org.eventb.core.predicate="t∈dom(T)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="d_prophecy∈(Rpos ⦂ ℙ(R)) → D">
 <org.eventb.core.prIdent name="D" org.eventb.core.type="ℙ(D)"/>
 <org.eventb.core.prIdent name="d_prophecy" org.eventb.core.type="ℙ(R×D)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p19" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒f(t)=T(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))))"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p20" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒f(t)=T(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))))"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="t∈(Rpos ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t)"/>
-<org.eventb.core.prPred name="p12" org.eventb.core.predicate="t∈closed(zero ⦂ R,now)">
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t)"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="t∈closed(zero ⦂ R,now)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p6" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="Tmax∈(R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="Tmax" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p24" org.eventb.core.predicate="t∈openclosed(now,now plus tx)">
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="t∈openclosed(now,now plus tx)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p16" org.eventb.core.predicate="f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒f(t)=T(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))))"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒f(t)=T(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))))"/>
-<org.eventb.core.prPred name="p30" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(T)∧T∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈closed(zero ⦂ R,now)⇒f(t)=T(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))))"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="T∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p8" org.eventb.core.predicate="f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="t∈dom(fx)">
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="f∈(Rpos ⦂ ℙ(R)) → (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="t∈dom(fx)">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p21" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))))"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
+<org.eventb.core.prPred name="p22" org.eventb.core.predicate="(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R)))∧((∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒f(t)=fx(t))⇒(∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈lopen(now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))))"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))">
 <org.eventb.core.prIdent name="t" org.eventb.core.type="R"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p22" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="∀t⦂R·t∈(Rpos ⦂ ℙ(R))∧t∈openclosed(now,now plus tx)⇒t∈dom(f)∧f∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))∧t∈dom(fx)∧fx∈(R ⦂ ℙ(R)) ⇸ (R ⦂ ℙ(R))"/>
 <org.eventb.core.prExpr name="e0" org.eventb.core.expression="Rpos ⦂ ℙ(R)"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
 <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="Prophecy/f/WFIS" org.eventb.core.confidence="1000" org.eventb.core.prFresh="ae,t,ae0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18" org.eventb.core.prSets="D" org.eventb.core.psManual="true">
 <org.eventb.core.lang name="L">

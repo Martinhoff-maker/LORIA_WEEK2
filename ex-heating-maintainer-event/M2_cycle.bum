@@ -12,7 +12,7 @@
 <org.eventb.core.invariant name="_c86WNON8EeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="type_T" org.eventb.core.predicate="T∈Rpos→R"/>
 <org.eventb.core.invariant name="_c86WNeN8EeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="type_now" org.eventb.core.predicate="now∈Rpos"/>
 <org.eventb.core.invariant name="_c869QON8EeqGV8L4J4n50w" org.eventb.core.generated="false" org.eventb.core.label="glue_Ta" org.eventb.core.predicate="∀t·t∈Rpos∧t∈closed(zero, now)⇒ T(t)=Ta(t)"/>
-<org.eventb.core.invariant name="_c869QeN8EeqGV8L4J4n50w" org.eventb.core.comment="* Please fill in Renewed Inductive Safety Property:&#10;     up until now, temperature is within safe range [Tmin, Tmax] " org.eventb.core.generated="false" org.eventb.core.label="safety" org.eventb.core.predicate="⊤" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="_c869QeN8EeqGV8L4J4n50w" org.eventb.core.comment="* Please fill in Renewed Inductive Safety Property:&#10;     up until now, temperature is within safe range [Tmin, Tmax] " org.eventb.core.generated="false" org.eventb.core.label="safety" org.eventb.core.predicate="⊤"/>
 <org.eventb.core.event name="_c869QuN8EeqGV8L4J4n50w" org.eventb.core.comment="* Step case of Inductive Safety Property" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.generated="false" org.eventb.core.label="Prophecy">
 <org.eventb.core.refinesEvent name="_c869Q-N8EeqGV8L4J4n50w" org.eventb.core.target="Update"/>
 <org.eventb.core.parameter name="_c869RON8EeqGV8L4J4n50w" org.eventb.core.comment="solution of e to append to T" org.eventb.core.generated="false" org.eventb.core.identifier="fx"/>

@@ -14,6 +14,6 @@
 <org.eventb.core.parameter name="_NVIxgOL3EeqkvOQFd0OwrA" org.eventb.core.generated="false" org.eventb.core.identifier="f"/>
 <org.eventb.core.guard name="_NVIxgeL3EeqkvOQFd0OwrA" org.eventb.core.generated="false" org.eventb.core.label="grd1" org.eventb.core.predicate="f∈Rpos→R ∧ (∀t·t∈Rpos⇒f(t)∈closed(Tmin,Tmax))"/>
 <org.eventb.core.action name="_NVIxguL3EeqkvOQFd0OwrA" org.eventb.core.assignment="Ta ≔ f" org.eventb.core.generated="false" org.eventb.core.label="act1"/>
-<org.eventb.core.witness name="_NVIxguL3EeqkvOQFd0OwrC" org.eventb.core.generated="false" org.eventb.core.label="fa" org.eventb.core.predicate="f∈Rpos→R∧(∀t·t∈Rpos⇒f(t)∈closed(Tmin,Tmax))⇒&#10;          fa∈Rpos→D∧(∀ t·t∈Rpos⇒ Pa(fa(t))=TRUE)"/>
+<org.eventb.core.witness name="_NVIxguL3EeqkvOQFd0OwrC" org.eventb.core.comment="f∈Rpos→R∧(∀t·t∈Rpos⇒f(t)∈closed(Tmin,Tmax))⇒&#13;&#10;          fa∈Rpos→D∧(∀ t·t∈Rpos⇒ Pa(fa(t))=TRUE)" org.eventb.core.generated="false" org.eventb.core.label="fa" org.eventb.core.predicate="⊤"/>
 </org.eventb.core.event>
 </org.eventb.core.machineFile>

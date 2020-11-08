@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="prop_dis_Tdon_Ton/WD"/>
+<org.eventb.core.prProof name="prop_dis_Tdoff_Toff/WD"/>
+<org.eventb.core.prProof name="prop_dis_Teon_Ton/WD"/>
+<org.eventb.core.prProof name="prop_dis_Teoff_Toff/WD"/>
+</org.eventb.core.prFile>
